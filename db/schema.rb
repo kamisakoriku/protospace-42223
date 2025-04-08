@@ -42,7 +42,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_05_095053) do
   create_table "comments", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "prototype_id", null: false
-    t.text "content", null: false
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prototype_id"], name: "index_comments_on_prototype_id"

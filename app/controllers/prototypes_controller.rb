@@ -19,7 +19,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to root_path
     else
-      render :new,status:unprocessable_entity
+      render :new,status: :unprocessable_entity
     end
   end
 
@@ -47,7 +47,6 @@ class PrototypesController < ApplicationController
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
   end
-
 
   def set_prototype
     @prototype=Prototype.find(params[:id])
